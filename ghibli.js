@@ -53,7 +53,7 @@ function displayResults(json) {
     para.textContent = `${films[i].description}`;
     div.setAttribute('class', 'content');
     btn.setAttribute('class', 'collapsible');
-    holding.setAttribute('class', 'col col-md-6')
+    holding.setAttribute('class', 'col-md-6')
 
 
     btn.addEventListener("click", function () {
