@@ -4,7 +4,11 @@ const baseURL = 'https://ghibliapi.herokuapp.com/';
 const section = document.querySelector('section');
 
 
-
+// document.getElementById('submit').addEventListener('click', selector)
+// function selector() {
+//   let selection = document.getElementById('groups').value;
+//   console.log(selection);
+// }
 
 //******************** FETCH ********************
 fetch(`${baseURL}films`)
@@ -17,8 +21,6 @@ fetch(`${baseURL}films`)
   });
 
 
-
-
 // ******************** DISPLAY RESULTS ******************** //
 function displayResults(json) {
   while (section.firstChild) {
@@ -28,7 +30,7 @@ function displayResults(json) {
   let films = json;
 
   for (let i = 0; i < films.length; i++) {
-   
+
     // ----- VARIABLES
     let holding = document.createElement('div');
     let article = document.createElement('article');
@@ -41,16 +43,13 @@ function displayResults(json) {
     let div = document.createElement('div');
     let br = document.createElement('br');
     let hr = document.createElement('hr')
-    // let clearfix = document.createElement('div');
-    // let coll = document.getElementsByClassName("collapsible");
-
 
     let current = films[i];
     console.log('Current:', current);
 
     // ----- SETTING TEXT CONTENT AND ATTRIBUTES
-    btn.textContent = `${films[i].title}`;
-    para.textContent = `${films[i].description}`;
+    btn.textContent = `${current.title}`;
+    para.textContent = `${current.description}`;
     div.setAttribute('class', 'content');
     btn.setAttribute('class', 'collapsible');
     holding.setAttribute('class', 'col-md-6')
@@ -62,11 +61,9 @@ function displayResults(json) {
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
-        content.style.maxHeight = content.scrollHeight + "px";//'200px'//content.scrollHeight + "px";
+        content.style.maxHeight = content.scrollHeight + "px"; //'200px'//content.scrollHeight + "px";
       }
     })
-
-    // clearfix.setAttribute('class', 'clearfix';);
 
     // ----- ADD TO SECTION TAG
     section.appendChild(holding);
@@ -75,25 +72,6 @@ function displayResults(json) {
     div.appendChild(hr);
     div.appendChild(para);
     holding.appendChild(br);
-  
+
   }
 }
-
-
-
-
-
-
-// let coll = document.getElementsByClassName("collapsible");
-
-// for (let i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function () {
-//     this.classList.toggle("active");
-//     var content = this.nextElementSibling;
-//     if (content.style.maxHeight) {
-//       content.style.maxHeight = null;
-//     } else {
-//       content.style.maxHeight = content.scrollHeight + "px";
-//     }
-//   });
-// };

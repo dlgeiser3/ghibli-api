@@ -13,15 +13,14 @@ body{
   margin-right: 0px;
 }
 
+
 .container {
   margin-right: 0px;
   margin-left: 0px;
-  margin-top: 10%;
+  margin-top: 12%;;
   max-width: 1500px;
   z-index: 1;
 }
-
-
 
 h1 {
   color: white;
@@ -30,13 +29,43 @@ h1 {
 img { 
   width: 20%;
   z-index: 5;
-  margin-top: 1%;
-  margin-left: 2%;
-  
+  margin-top: 10px;
+  margin-left: 10px;
 }
+
+/* form {
+  padding-top: 30%;
+}
+select{ 
+  background-color: #021132; 
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  height: 30px;
+  width: 150px;
+  outline: none;
+  font-weight: 200;
+}
+
+input{
+  background-color: #021132;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  width: 150px;
+  border-style: none;
+  outline: none;
+  font-weight: 200;
+}
+
+input:hover{
+ background-color: #83A1C3;
+} */
+
 
 
 /*********** BUTTON STYLING ***********/
+
 .collapsible {
   background-color: #112E56;
   color: white;
