@@ -3,13 +3,6 @@
 const baseURL = 'https://ghibliapi.herokuapp.com/';
 const section = document.querySelector('section');
 
-
-// document.getElementById('submit').addEventListener('click', selector)
-// function selector() {
-//   let selection = document.getElementById('groups').value;
-//   console.log(selection);
-// }
-
 //******************** FETCH ********************
 fetch(`${baseURL}films`)
   .then(function (result) {
@@ -33,12 +26,7 @@ function displayResults(json) {
 
     // ----- VARIABLES
     let holding = document.createElement('div');
-    let article = document.createElement('article');
-    let heading = document.createElement('h2');
-    let link = document.createElement('a');
-    let img = document.createElement('img');
     let para = document.createElement('p');
-    let li = document.createElement('li');
     let btn = document.createElement('button');
     let div = document.createElement('div');
     let br = document.createElement('br');
@@ -54,14 +42,14 @@ function displayResults(json) {
     btn.setAttribute('class', 'collapsible');
     holding.setAttribute('class', 'col-md-6')
 
-
+    // ----- TOGGLE ACTIVE ON CLICK
     btn.addEventListener("click", function () {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
-        content.style.maxHeight = content.scrollHeight + "px"; //'200px'//content.scrollHeight + "px";
+        content.style.maxHeight = content.scrollHeight + "px";
       }
     })
 
